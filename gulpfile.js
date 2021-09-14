@@ -12,6 +12,7 @@ const cssnano = require('gulp-cssnano');
 const autoprefixer = require('gulp-autoprefixer');
 const rename = require('gulp-rename');
 
+
 function copyHtml() {
     return src('./src/index.html')
         .pipe(dest('./dist'));
@@ -64,6 +65,7 @@ function copyFontsMin() {
         .pipe(rename({suffix:'.min'}))
         .pipe(dest('./dist/fonts'));
 }
+
 
 module.exports = {
     build: parallel(copyHtml, copyImg, copyJs, copyCss, copyFonts),
